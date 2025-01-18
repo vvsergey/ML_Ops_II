@@ -1,0 +1,6 @@
+.idea/
+.venv/
+.git/
+pycache
+__pycache__/
+**/ml_1_venv/
