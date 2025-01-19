@@ -1,6 +1,7 @@
 .idea/
 .venv/
 .git/
+builds/
 pycache
 __pycache__/
 **/ml_1_venv/

@@ -1,0 +1,63 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1498.v33a_0c6f3a_4b_4">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2218.v56d0cda_37c72"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2218.v56d0cda_37c72">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4009.v0089238351a_9">
+    <script>pipeline {
+    agent any
+
+    stages {
+        
+        stage(&apos;Data Creation&apos;) {
+            steps {
+                script {
+                    echo &quot;----Data Creation (begin)-----&quot;
+                    &apos;python3 data_creation.py&apos;
+                    echo &quot;----Data Creation (end)-----&quot;
+                }
+            }
+        }
+        stage(&apos;Data Preprocessing&apos;) {
+            steps {
+                script {
+                    echo &quot;----Data Preprocessing (begin)-----&quot;
+                    &apos;python3 data_preprocessing.py&apos;
+                    echo &quot;----Data Preprocessing (end)-----&quot;
+                }
+            }
+        }
+        stage(&apos;Model Preparation&apos;) {
+            steps {
+                script {
+                    echo &quot;----Model Preparation (begin)-----&quot;
+                    &apos;python3 model_preparation.py&apos;
+                    echo &quot;----Model Preparation (end)-----&quot;
+                }
+            }
+        }
+        stage(&apos;Model Testing&apos;) {
+            steps {
+                script {
+                    echo &quot;----Model Testing (begin)-----&quot;
+                    &apos;python3 model_testing.py&apos;
+                    echo &quot;----Model Testing (end)-----&quot;
+                }
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
