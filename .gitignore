@@ -5,3 +5,4 @@ builds/
 pycache
 __pycache__/
 **/ml_1_venv/
+/data
