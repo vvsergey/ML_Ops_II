@@ -17,3 +17,9 @@ Cкрипт pipeline.sh необходимо запускать непосред
 3. Запустите скрипт `request.sh`
 </details>
 
+
+## Lab_4. Практическое задание №4 (vo_HW)
+<details>
+
+
+</details>
